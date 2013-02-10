@@ -1,38 +1,49 @@
-<UIElements name="TESTHUD">
-
+<UIElements name="NewHUD"> <!-- Group name for this elements -->
+ 
+  <!-- definition of an UI element named "HUD" -->
   <UIElement name="NewHUD"render_lockless="1">
-  
-    <GFx file="NewHUD.gfx" layer="1">
+ 
+    <!-- gfx/swf file for this UI element -->
+    <GFx file="NewHUD.gfx" layer="0">
+      <!-- the align mode of this element -->
       <Constraints>
-       <Align mode="dynamic" valign="center" halign="center" scale="1" max="0" />
+        <Align mode="dynamic" halign="center" valign="center" scale="1" max="1" />
       </Constraints>
     </GFx>
+ 
+    <!-- available functions -->
+   <functions>
 	
-    <functions>
+    <function name="SetWeapon" desc="" funcname="SetCurrentWeapon">
+	 <param name="WeaponName" desc="" type="string"/>
+	 <param name="AmmoName" desc="" type="string"/>
+    </function>
 	
-       <function name="SetWeapon" desc="" funcname="setCurrentWeapon">
-	    <param name="WeaponName" desc="" type="string"/>
-        <param name="AmmoName" desc="" type="string" />
-        </function>
-		
-        <function name="SetAmmo" desc="" funcname="setAmmo">
-         <param name="CurrAmmo" desc="" type="int"/>
-         <param name="MaxAmmo" desc="" type="int" />
-         </function>
-		 
-    </functions>
+	<function name="SetAmmo" desc="" funcname="setAmmo">
+	 <param name="CurrAmmo" desc="" type="int"/>
+	 <param name="MaxAmmo" desc="" type="int"/>
+	</function>
 	
-    <MovieClips>
-	
-    <MovieClip name="HealthBar" desc=""
-	
-    instancename="healthMC" />
-    </MovieClips>
-	
-    <Variables>
-    <Variable name="HealthValue" desc=""
-     varname="healthMC.currHealth.text" />
-    </Variables>
-	
-    </UIElement>
+   </functions>
+ 
+    <!-- available events that are raised by the Flash asset -->
+    <events>
+    </events>
+ 
+    <!-- available variables -->
+    <variables>
+	 <variable name="HealthValue" desc="" varname="healthMC.currHealth.text"/>
+    </variables>
+ 
+    <!-- available arrays -->
+    <arrays>
+    </arrays>
+ 
+    <!-- available movieclips -->
+    <movieclips>
+	 <movieclip name="HealthBar" desc="" instancename="healthMC"/>
+    </movieclips>
+ 
+  </UIElement>
+ 
 </UIElements>
